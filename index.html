@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayden Edwards – Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" aria-label="Home">AYDEN EDWARDS</a>
+
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Activity</a></li>
+      <li><a href="community.html">Community Service</a></li>
+      <li><a href="tutoring.html">Tutoring</a></li>
+    </ul>
+
+    <a class="nav__linkedin" href="https://www.linkedin.com/in/aydendeanedwards" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <img src="https://ssl.gstatic.com/atari/images/sociallinks/linkedin_white_28dp.png" alt="LinkedIn">
+    </a>
+  </div>
+</nav>
+
+
+
+<main>
+    <section id="intro">
+      <h1>Ayden Edwards</h1>
+      <p class="tagline">Mathematics Undergraduate at the University of Houston</p>
+      <img id="PFP" src="documents/Personal Info/jonesy.jpg" alt="Photo of me" class="profile-photo">
+    </section>
+
+
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li>Personal Email: <a href="mailto:aydenedwardsece@gmail.com">aydenedwardsece@gmail.com</a></li>
+        <li>Email (University): <a href="mailto:adedwar5@cougarnet.uh.edu">adedwar5@cougarnet.uh.edu</a></li>
+        <li>Email (College): <a href="mailto:ayden.edwards@sjcd.edu">Ayden.Edwards@sjcd.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/aydendeanedwards">LinkedIn</a></li>
+        <li>
+          <a href="https://calendar.google.com/calendar/u/2?cid=N2YwMDk2YzUzYzA3MzdhYzhjY2Y1MmY2MDNjZWFlMGZkY2NhNjY3YTk2YTZhMmYyZGQ4MzdkMzU1MjEyZWQ1MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t">
+            Calendar
+          </a>
+        </li>
+      </ul>
+    </section>
+
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am an Honors Mathematics at the University of Houston.</p>
+
+
+      <p>Since I haven't learned enough math to decide what I want to specialize in,
+        I am taking as many high-level courses as I can. Right now I'm leaning towards
+        some area of geometry, algebraic or differential. I have course experience in
+        Linear Algebra, low-level Numerical Analysis, and Intermediate Analysis.</p>
+
+
+      <p>I have been selected as president of "Cougar Mathletics" at UH, (functionally
+        it's the UH Math Club). I love problem solving leisurely and hope to compete in
+        the Putnam Competition in December. I'm also involved in Honors Ambassadors at UH,
+        IEEE UH, and Code[Coogs].</p>
+     
+      <p>I have worked as a tutor at San Jacinto College since high school, and this August
+         I will have worked there for 2 years. I have been a private tutor for a little over
+         a year now.</p>
+
+
+      <p>Outside of math, I love playing soccer and watching Basketball. Catch me at every
+         home basketball game at UH this season.Go Coogs!</p>
+    </section>
+
+
+    <section id="quick-links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="Documents/Curriculum_Vitae___Ayden_Edwards__NY (2).pdf" target="_blank">View CV (PDF)</a></li>
+        <li><a href="Documents/Resume_NG.pdf" target="_blank">View Résumé (PDF)</a></li>
+        <!--<li><a href="https://github.com/yourusername">GitHub</a></li>-->
+        <!--<li><a href="https://scholar.google.com/citations?user=">Google Scholar</a></li>-->
+      </ul>
+    </section>
+
+
+
+
+    <section id="projects-summary">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>Project One Title:</strong> Brief description of the project (placeholder).
+        </li>
+        <li>
+          <strong>Project Two Title:</strong> Brief description of another project (placeholder).
+        </li>
+      </ul>
+      <p><a href="projects.html">See all projects &raquo;</a></p>
+
+    </section>
+  </main>
+
+
+  <script>
+(function(){
+  const img = document.getElementById('PFP');
+  const original = img.src;
+  const egg = 'Documents/Personal Info/FortniteJonesy.png';
+  let count = 0, timer;
+
+
+  img.addEventListener('click', ()=> {
+    count++;
+    clearTimeout(timer);
+    if (count === 3) {
+      img.src = (img.src === original) ? egg : original;
+      count = 0;
+    } else {
+      timer = setTimeout(()=> count = 0, 500);
+    }
+  });
+})();
+</script>
+</body>
+</html>

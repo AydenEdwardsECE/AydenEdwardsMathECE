@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ayden Edwards — STEM Tutoring</title>
+  <meta name="description" content="Personalized math & science tutoring — SAT/ACT Math, Calculus, Linear Algebra, APs, UIL prep. Flexible, adaptive, results-driven instruction." />
+  <meta name="theme-color" content="#b00020" />
+  <style>
+
+    :root{
+      --primary:#b00020;
+      --primary-2:#e3424a;
+      --ink:#0b0b0e;
+      --text:#1a1d24;
+      --muted:#5a6576;
+      --bg:#ffffff;
+      --card:#f7f8fb;
+      --ring:rgba(176,0,32,.25);
+      --shadow:0 12px 24px rgba(176,0,32,.12);
+
+
+      --uh-scarlet:#c8102e;
+      --uh-scarlet-dark:#9b0f24;
+    }
+
+
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+
+    /* Layout */
+    .container{max-width:1100px; margin-inline:auto; padding:0 20px}
+
+
+    /* Navbar */
+    header.nav{
+        position:sticky; 
+        top:0; z-index:50; 
+        background:#0b0d10; 
+        border-bottom:1px solid #eceff4
+    }
+    .nav-inner{
+        display:flex; 
+        align-items:center; 
+        justify-content:space-between; 
+        padding:20px 0
+    }
+    .brand{
+        display:flex; 
+        align-items:center; 
+        gap:.6rem; 
+        font-weight:800; 
+        color:var(--primary)
+    }
+    .brand-mark{
+        width:38px; 
+        height:38px; 
+        border-radius:50%; 
+        display:grid; 
+        place-items:center; 
+        background:var(--primary); 
+        color:#fff; 
+        font-weight:900
+    }
+
+
+    nav ul{
+      display:flex;
+      align-items:center;
+      gap:1.25rem;
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+    nav ul li a{
+      color:var(--uh-scarlet); 
+      font-weight:600;
+      display:inline-block;
+      padding:8px 0;          
+      line-height:1.2;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus{
+      color:var(--uh-scarlet-dark);
+      text-decoration:underline;
+    }
+
+
+    .btn{
+        display:inline-flex; 
+        align-items:center; 
+        gap:.5rem; 
+        padding:.8rem 1.1rem; 
+        border-radius:12px; 
+        font-weight:700; 
+        border:1px solid transparent; 
+        cursor:pointer
+    }
+    .btn-primary{
+        background:linear-gradient(135deg,var(--primary),var(--primary-2)); 
+        color:#fff; 
+        box-shadow:var(--shadow)
+    }
+    .btn-outline{
+        border-color:#c8102e; 
+        color:#c8102e; 
+    }
+    .btn:focus-visible{
+        outline:3px solid var(--ring); 
+        outline-offset:2px
+    }
+
+
+    /* Hero */
+    .hero{padding:64px 0 32px}
+    .hero-grid{display:grid; 
+        grid-template-columns:1.1fr 1fr; 
+        gap:36px; 
+        align-items:center
+    }
+    .eyebrow{
+        display:inline-block; 
+        font-size:.85rem; 
+        letter-spacing:.4px; 
+        color:var(--primary); 
+        font-weight:800
+    }
+       h1{
+        font-size:clamp(2rem,2.4vw + 1rem,3rem); 
+        line-height:1.1; 
+        margin:.35rem 0 .5rem; 
+        color:var(--ink)
+    }
+    .lead{
+        color:var(--muted); 
+        max-width:62ch
+    }
+    .spots{
+        display:grid; 
+        grid-template-columns:repeat(2,1fr); 
+        gap:10px; 
+        margin-top:14px
+    }
+    .spot{
+        display:flex; 
+        align-items:center; 
+        gap:10px; 
+        background:var(--card); 
+        border:1px solid #e8ebf3; 
+        padding:10px 12px; 
+        border-radius:12px
+    }
+    .spot i{
+        width:28px; 
+        height:28px; 
+        border-radius:999px; 
+        display:grid; 
+        place-items:center; 
+        background:var(--primary); 
+        color:#fff; 
+        font-style:normal; 
+        font-weight:900
+    }
+
+
+    .hero-visual{
+        display:grid; 
+        grid-template-columns:repeat(2,1fr); 
+        gap:12px; 
+        justify-items:center
+    }
+    .bubble{
+        width:100%; 
+        aspect-ratio:1/1; 
+        border-radius:50%; 
+        overflow:hidden; 
+        border:6px solid #fff; 
+        box-shadow:0 6px 18px rgba(0,0,0,.12)
+    }
+
+    /* Sections */
+    section{padding:56px 0}
+    .sec-head{
+        display:flex; 
+        align-items:end; 
+        justify-content:space-between; 
+        gap:16px; 
+        margin-bottom:18px}
+    h2{
+        font-size:clamp(1.6rem,1.4vw + 1rem,2.1rem); 
+        margin:0; 
+        color:var(--ink)
+    }
+    .sub{
+        color:var(--muted); 
+        max-width:70ch
+    }
+
+
+    /* Feature cards */
+    .grid{
+        display:grid; 
+        grid-template-columns:repeat(4,1fr); 
+        gap:14px
+    }
+    .card{
+        background:#fff; 
+        border:1px solid #e8ebf3; 
+        border-radius:16px; 
+        padding:16px; 
+        box-shadow:0 6px 14px rgba(0,0,0,.04)
+    }
+    .icon{
+        width:36px; 
+        height:36px; 
+        border-radius:10px; 
+        display:grid; 
+        place-items:center; 
+        background:linear-gradient(135deg,var(--primary),var(--primary-2)); 
+        color:#fff; 
+        font-weight:900
+    }
+    .card h3{
+        margin:10px 0 6px; 
+        font-size:1.08rem
+    }
+    .card p{
+        margin:0; 
+        color:var(--muted)
+    }
+
+
+    /* Subjects & Levels */
+    .pill{
+        display:inline-block; 
+        padding:.45rem .7rem; 
+        border:1px solid #e1e6f0; 
+        border-radius:999px; 
+        background:var(--card); 
+        font-weight:600; 
+        color:#394252
+    }
+    .pill + .pill{margin-left:.4rem}
+    .pill-wrap{
+        display:flex; 
+        flex-wrap:wrap; 
+        gap:.5rem
+    }
+
+
+    /* Testimonial */
+    blockquote{
+        margin:0; 
+        padding:18px; 
+        background:var(--card); 
+        border:1px solid #e8ebf3; 
+        border-radius:16px; 
+        font-size:1rem
+    }
+    blockquote footer{
+        color:var(--muted); 
+        margin-top:8px
+    }
+
+
+    /* Pricing / Offers */
+    .pricing{
+        display:grid; 
+        grid-template-columns:repeat(3,1fr); 
+        gap:14px
+    }
+    .price{
+        padding:18px; 
+        border-radius:16px; 
+        border:1px solid #e8ebf3; 
+        background:#fff
+    }
+    .price.highlight{outline:3px solid rgba(176,0,32,.15)}
+    .amount{
+        font-size:2rem; 
+        font-weight:900; 
+        color:var(--primary); 
+        margin:6px 0 10px
+    }
+
+
+    /* CTA Bar */
+    .cta{
+        background:linear-gradient(135deg,var(--primary),var(--primary-2)); 
+        color:#fff; 
+        border-radius:18px; 
+        padding:18px; 
+        display:flex; 
+        align-items:center; 
+        justify-content:space-between; 
+        gap:14px
+    }
+
+
+    /* Contact */
+    form{
+        display:grid; 
+        gap:12px; 
+        max-width:560px
+    }
+    label{font-weight:700}
+    input, textarea{
+        width:100%; 
+        padding:12px 14px; 
+        border-radius:12px; 
+        border:1px solid #dfe4ee; 
+        background:#fff; 
+        color:#1a1d24
+    }
+    input:focus, textarea:focus{
+        outline:3px solid var(--ring); 
+        border-color:transparent
+    }
+
+
+    footer{
+        padding:36px 0; 
+        color:#6a7281; 
+        border-top:1px solid #eceff4}
+
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .pricing{grid-template-columns:1fr}
+      .spots{grid-template-columns:1fr}
+    }
+    @media (max-width: 620px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Ayden Tutoring Home">
+        <span class="brand-mark">AE</span>
+        <span>Ayden Edwards • STEM Tutoring</span>
+      </a>
+      <a class="brand" href="index.html">
+        <span> About Me</span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#subjects">Subjects</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#contact" class="btn btn-outline">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Improve student performance</span>
+        <h1>Personalized STEM tutoring — adaptable, capable, and results-driven.</h1>
+        <p class="lead">Years of tutoring experience • Perfect SAT Math scorer • UIL Competition coach • 100+ students tutored</p>
+        <div class="spots" aria-label="High-impact highlights">
+          <div class="spot"><i>✓</i><span>Adaptive instruction — one size never fits all.</span></div>
+          <div class="spot"><i>✓</i><span>Hand-built practice sets & explanations.</span></div>
+        </div>
+        <p style="margin-top:14px">
+          <a class="btn btn-primary" href="#contact">Call or Text (832) 614-0174</a>
+          <a class="btn btn-outline" href="mailto:AydenEdwardsECE@gmail.com">Email Me</a>
+        </p>
+      </div>
+      <div class="hero-visual">
+        <div class="bubble"><img src="poster-portrait-1.jpg" alt="Ayden tutoring — graduation portrait" /></div>
+        <div class="bubble"><img src="poster-portrait-2.jpg" alt="STEM study scene" /></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="services">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Proven approach</h2>
+        <p class="sub">Experienced • Resourceful • Adaptable • Capable — the same pillars from your poster, translated into a clear service promise.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">★</div>
+          <h3>Experienced</h3>
+          <p>Years of tutoring, perfect SAT Math, UIL Competition coach. 100+ students supported with measurable gains.</p>
+        </article>
+        <article class="card">
+          <div class="icon">✎</div>
+          <h3>Resourceful</h3>
+          <p>Hundreds of custom practice problems and targeted review sheets for every mastery level.</p>
+        </article>
+        <article class="card">
+          <div class="icon">⚙︎</div>
+          <h3>Adaptable</h3>
+          <p>No single method works for everyone — I calibrate pace, format, and feedback to the student.</p>
+        </article>
+        <article class="card">
+          <div class="icon">↑</div>
+          <h3>Capable</h3>
+          <p>From Algebra I to Calculus III, Linear Algebra, Differential Equations, APs, and contest math.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="subjects">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Subjects & Levels</h2>
+        <p class="sub">High school • Honors/AP • SAT/ACT Math • UIL • College core math. Ask about accelerated bridging plans.</p>
+      </div>
+      <div class="pill-wrap" aria-label="subject list">
+        <span class="pill">Algebra I/II</span>
+        <span class="pill">Geometry</span>
+        <span class="pill">Pre-Calculus</span>
+        <span class="pill">Calculus I–III</span>
+        <span class="pill">Linear Algebra</span>
+        <span class="pill">Differential Equations</span>
+        <span class="pill">AP Calculus AB/BC</span>
+        <span class="pill">AP Statistics</span>
+        <span class="pill">SAT/ACT Math</span>
+        <span class="pill">UIL Problem-Solving</span>
+        <span class="pill">Physics (Mechanics)</span>
+        <span class="pill">Chemistry (General)</span>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="proof">
+    <div class="container">
+      <div class="sec-head">
+        <h2>What families say</h2>
+        <p class="sub">Consistent, structured sessions with targeted practice move grades and confidence fast.</p>
+      </div>
+      <blockquote>
+        “Ayden quickly identified gaps and built a plan. Our son’s Algebra II grade rose from a 78 to a 93 in six weeks, and his SAT Math jumped 120 points.”
+        <footer>— Parent of HS junior</footer>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <section id="offers">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Simple options</h2>
+        <p class="sub">Transparent, flexible scheduling. In-person (Houston area) or online via Zoom. Ask about UIL team coaching.</p>
+      </div>
+      <div class="pricing">
+        <div class="price">
+          <h3>Single Session</h3>
+          <div class="amount">$<span>40</span>/hr</div>
+          <p>Ideal for quick review, test prep boosts, or homework check-ins.</p>
+        </div>
+        <div class="price highlight">
+          <h3>SAT/ACT Prep Classes</h3>
+          <div class="amount">$<span>20</span>/month</div>
+          <p>Scheduled weekly SAT/ACT prep classes are great for students looking to passively hone skills useful for SAT and ACT-level critical thinking.</p>
+        </div>
+        <div class="price">
+          <h3>Resources and Academic Advice</h3>
+          <div class="amount">Free</div>
+          <p>All of my students get access to a large library of practice materials, textbooks, study resources, explanation videos, and more — no extra charges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="container">
+    <div class="cta" role="region" aria-label="Get in touch">
+      <div>
+        <strong>Ready to raise scores and confidence?</strong><br/>
+        Let’s build a plan tailored to you.
+      </div>
+      <div>
+        <a class="btn btn-primary" href="tel:+18326140174">Text (832) 614-0174</a>
+        <a class="btn btn-primary" href="mailto:AydenEdwardsECE@gmail.com">Email Ayden</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <div class="container">
+      <div class="sec-head">
+        <h2>Contact</h2>
+        <p class="sub">Tell me the course, timeline, and goals. I’ll reply with a concrete plan and first-session availability.</p>
+      </div>
+      <form id="contactForm" novalidate>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required placeholder="Parent/Student name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Course(s), grade level, goals, preferred times…"></textarea>
+        </div>
+        <div>
+          <button class="btn btn-primary" type="submit">Send</button>
+          <span id="formStatus" role="status" aria-live="polite" style="margin-left:10px"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <footer role="contentinfo">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px">
+      <div class="brand" style="color:#6a7281"><span class="brand-mark">A</span> <span>Ayden Edwards • STEM Tutoring</span></div>
+      <small>© <span id="year"></span> Ayden Edwards. All rights reserved.</small>
+      <div>
+        <a href="mailto:AydenEdwardsECE@gmail.com">AydenEdwardsECE@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Minimal client-side validation demo
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get('name')||'').toString().trim();
+      const email = (data.get('email')||'').toString().trim();
+      const message = (data.get('message')||'').toString().trim();
+      if(!name || !email || !message){
+        statusEl.textContent = 'Please fill in all fields.';
+        statusEl.style.color = '#b00020';
+        return;
+      }
+      const validEmail = /.+@.+\..+/.test(email);
+      if(!validEmail){
+        statusEl.textContent = 'Please enter a valid email address.';
+        statusEl.style.color = '#b00020';
+        return;
+      }
+      statusEl.textContent = 'Thanks! I will reply by email shortly (demo).';
+      statusEl.style.color = '#128a3a';
+      form.reset();
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
